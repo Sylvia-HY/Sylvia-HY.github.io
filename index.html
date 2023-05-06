@@ -1,142 +1,248 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>welcome to my world</title>
-</head>
-<link rel="stylesheet" type="text/css" href="static/css/index.css"/>
-<!-- 引入JQuery -->
-<script src="static/js/jquery.min.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="static/js/click-fun.js"></script>
-
-
-<body onclick="click_fun(event)">
-    <nav>
-        <div class="header-fixed">
-            <div class="nav-logo fleft"><span style="line-height: 60px;">为你筑梦</span></div>
-            <div class="nav-menubar fright">
-                <ul id="nav-list">
-                    <li class="current"><a href="#">首页</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">时光轴</a></li>
-                    <li><a href="#">友人帐</a></li>
-                    <li><a href="#">关于</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="part_1">
-        <div class="part_1_title">
-            <div class="inner">
-                <h2>为你筑梦</h2>
-            </div>
-            <div class="title">
-                <p>心之所向，素履可往</p>
-                <p>生如逆旅，一苇以航</p>
-            </div>
-        </div>
-        <div class="guide">
-            <a href="javascript:void(0);">
-                <span class="down">
-                    <!-- svg矢量图 -->
-                    <svg viewBox="0 0 1792 1024" width="16" height="16">
-                        <path d="M21.824 126.208L834.624 998.656a92.672 92.672 0 0 0 126.976 0L1770.304 126.208C1819.2 77.568 1780.544 0 1706.816 0H85.312C11.84 0-27.328 77.312 21.824 126.208z" fill="#ffffff" p-id="3369"></path>
-                    </svg>
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="part_2">
-        <div class="container">
-            <div class="brief_major">
-                — 欢迎走进我的世界 —
-            </div>
-            <div class="brief_paragraph">
-                <p>对于曾经，每个人的记忆中，都会有一些无法忘记的片段。</p>
-                <p>曾经的年少轻狂，给我们的青春留下了太多美好的回忆，但也有些许无奈，让我们久久难以释怀。</p>
-                <p>那时的自己，真的很单纯，也真的很勇敢。或许这就是青春原本的样子，不完美，却很真实</p>
-                <p>但无论怎样，过去了的，都无法再重来，我们只能往前走，只能向前看。</p>
-            </div>
-            <div class="brief_url">
-                <a href="javascript:void(0);">About me</a>
-            </div>
-        </div>
-    </div>
-    <div class="part_3">
-            <div class="container">
-                <div class="brief_major">
-                    — 自娱自乐 —
-                </div>
-                <div class="list">
-                    <ul>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="http://47.116.130.99:20548/" target="_blank">MOJ在线评测系统</a></figcaption>
-                                <img src="static/images/moj.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="static/files/snake-ai.exe" target="_blank">贪吃蛇AI</a></figcaption>
-                                <img src="static/images/snake-ai.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="static/files/pintu.html" target="_blank">拼图游戏</a></figcaption>
-                                <img src="static/images/pintu.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="static/files/3d-rate.html" target="_blank">旋转星球</a></figcaption>
-                                <img src="static/images/3d-rate.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="static/files/catch-floating-ball/index.html" target="_blank">捕捉飘浮球</a></figcaption>
-                                <img src="static/images/click-ball.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                        <li>
-                            <figcaption>
-                                <figcaption><a href="static/files/little-c-breaks-through/index.html" target="_blank">小C闯关</a></figcaption>
-                                <img src="static/images/little-c.png" width="100%" height="220" />
-                            </figcaption>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </div>
-    <footer>
-        <div class="container">
-            <div class="more"></div>
-            <div class="copyright">Copyright © 2019-2021 为你筑梦</div>
-        </div>
-    </footer>
-
-    <!-- 背景雪花特效 -->
-    <script src="static/js/snowflakes.min.js"></script>
-    <script src="static/js/snow_load.js"></script>
-    <!-- index.js -->
-    <script>
-        // 原生js写法
-        window.onload = function(){
-            // 设置点击nav-list的样式
-            let navUl = document.getElementById("nav-list");
-            let navLi = navUl.getElementsByTagName("li");
-            for(let index = 0; index < navLi.length; index++){
-                navLi[index].onclick = function(){
-                    for(let i = 0; i < navLi.length; i++){
-                        navLi[i].className = "";
-                    }
-                    this.className = "current";
-                };
-            }
-        }
-    </script>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+		<meta name="keywords" content="Han-Sylvia's Page">
+		<meta name="description" content="Welcome to Han-Sylvia's Page">
+		<title>Han-Sylvia's Page</title>
+		<link rel="icon" href="./img/faviconhy.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="./css/base.css" />
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+	</head>
+	<body>
+		<!-- 导航 -->
+		<div class="main-left fl">
+			<!-- 头像 -->
+			<div class="head-portrait">
+				<div class="portrait">
+					<a href="#">
+						<img src="./img/avatar.JPG" alt="portrait">
+					</a>
+				</div>
+				<p class="text"><a href="#">Han-Sylvia</a></p>
+			</div>
+			<nav>
+				<ul class="nav-item">
+					<li>
+						<a href="#">
+							<span class="line active"></span>
+							<span class="circular"></span>主页
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="line active"></span>
+							<span class="circular"></span>动态
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="line active"></span>
+							<span class="circular"></span>博客
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="line active"></span>
+							<span class="circular"></span>联系我
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<ul class="icons">
+				<p class="text">友情链接</p>
+				<li>
+					<a href="https://blog.csdn.net/Yuzuruya" target="_blank">CSDN</a>
+				</li>
+				<li>
+					<a href="https://github.com/Sylvia-HY" target="_blank">Github</a>
+				</li>
+				<!-- <li>
+					<a href="#">微信公众号</a>
+				</li> -->
+			</ul>
+		</div>
+		<!-- 主页 -->
+		<div class="main-right fr">
+			<div class="home-page">
+				<h1 class="title">H e l l o，w o r l d</h1>
+				<h3 class="text">Welcome to Han-Sylvia's Page</h3>
+				<!-- <div class="jump"><a href="#">作品集</a></div> -->
+				<span>Han-Sylvia / 18203371066 / yahan9979@gmail.com</span>
+			</div>
+		</div>
+		<!-- 页面内容 -->
+		<div class="page-content fr">
+			<!-- 作品 -->
+			<div class="works">
+				<!-- 头 -->
+				<div class="works-heading">
+					<!-- 标题 -->
+					<h3 class="title">最近<span>动态</span></h3>
+					<!-- 文本 -->
+					<p class="text">快来和我一起玩吧！</p>
+				</div>
+				<!-- 内容 -->
+				<div class="works-content">
+					<div class="items">
+						<!-- 轮播图片 -->
+						<div style="overflow-x: hidden; white-space: normal;">
+							<div class="slides">
+								<!-- 轮播图片 -->
+								<!-- 1 -->
+								<div class="slides-items">
+									<div class="slides-img">
+										<a href="#">
+											<img src="./img/baotuquan11.png">
+											<p class="p">趵突泉</p>
+										</a>
+									</div>
+									<h3 class="headline">
+										<a href="#">Baotu Spring</a>
+									</h3>
+									<h4 class="subtitle">
+										<a href="#">趵突泉</a>
+									</h4>
+									<p class="text">
+										<a href="#">“柳”在趵突泉</a>
+									</p>
+								</div>
+								<!-- 2 -->
+								<div class="slides-items">
+									<div class="slides-img">
+										<a href="#">
+											<img src="./img/dapangyu.PNG">
+											<p class="p">趵突泉的大胖鲤</p>
+										</a>
+									</div>
+									<h3 class="headline">
+										<a href="#">The big fat carp of Baotu Spring</a>
+									</h3>
+									<h4 class="subtitle">
+										<a href="#">趵突泉知名大胖鲤</a>
+									</h4>
+									<p class="text">
+										<a href="#">因神龙摆尾摆不动，吃饭被游客投喂一步到“胃”而火遍全网的大胖鲤，锦鲤转运！！！</a>
+									</p>
+								</div>
+								<!-- 3 -->
+								<div class="slides-items">
+									<div class="slides-img">
+										<a href="#">
+											<img src="./img/baotuquan2.PNG">
+											<p class="p">趵突泉的泉水</p>
+										</a>
+									</div>
+									<h3 class="headline">
+										<a href="#">The spring water of Baotu Spring</a>
+									</h3>
+									<h4 class="subtitle">
+										<a href="#">趵突泉的水</a>
+									</h4>
+									<p class="text">
+										<a href="#">云含雪浪频翻地，河涌三星倒映天。</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- 切换按钮 -->
+						<div class="toggle-button">
+							<span class="prev">&lt;</span>
+							<span class="next">&gt;</span>
+						</div>
+						<!-- 指示灯 -->
+						<div class="indicator-light">
+							<!-- 动态显示 -->
+							<!-- <span>1</span>
+							<span>2</span>
+							<span>3</span> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 博客blog -->
+			<div class="blog">
+				<div class="blog-heading">
+					<!-- 标题 -->
+					<h3 class="title">我的<span>博客</span></h3>
+					<!-- 文本 -->
+					<p class="text">开发路上的点点滴滴</p>
+				</div>
+				<!-- 内容 -->
+				<div class="blog-content">
+					<!-- 标题导航 -->
+					<div class="nav-head">
+						<ul class="head-items">
+							<li class="active-li"><a href="#">2023年</a></li>
+							<li><a href="#">2022年</a></li>
+							<li><a href="#">2021年</a></li>
+							<li><a href="#">2020年</a></li>
+						</ul>
+					</div>
+					<!-- content -->
+					<div class="content">
+						<!-- blog1 -->
+						<div class="blog-items">
+							<img src="./img/Food-delivery-system.png" alt="blog1">
+							<div class="items-right fr">
+								<h3 class="title">外卖送餐系统</h3>
+								<h4 class="time">2023年5月4日</h4>
+								<p class="text">这是基于GaussDB(MySQL)的外卖送餐系统，前端使用Vue+Element-UI+Vant，后端使用Springboot，数据库管理使用插件Mybatis-plus+Lombok包括商家端、用户端；支持骑手位置可视化追踪；界面美观，用户管理、订单管理等功能较为完善。</p>
+								<a href="https://github.com/Sylvia-HY/Food-delivery-system.git">
+									<button type="button" class="btn">查看</button>
+								</a>
+							</div>
+						</div>
+						<!-- blog2 -->
+						<div class="blog-items">
+							<img src="./img/maze.png" alt="blog1">
+							<div class="items-right fr">
+								<h3 class="title">迷宫游戏</h3>
+								<h4 class="time">2023年5月4日</h4>
+								<p class="text">这是基于c++语言的迷宫游戏项目，使用easyX可视化，界面美观，路径可动态显示；用户可自定义起点、终点等迷宫设置。</p>
+								<a href="https://github.com/Sylvia-HY/maze-game-system.git">
+									<button type="button" class="btn">查看</button>
+								</a>
+							</div>
+						</div>
+						<!-- blog3 -->
+						<div class="blog-items">
+							<img src="./img/kaoshipingtai.PNG" alt="blog1">
+							<div class="items-right fr">
+								<h3 class="title">在线考试系统</h3>
+								<h4 class="time">2023年5月4日</h4>
+								<p class="text">这是基于Java语言的在线考试系统，前端使用Java Swing，后端使用Java连接数据库，分为教师端与学生端；实现功能包括学生信息管理、试卷管理、成绩管理、学生考试、教师批卷等。</p>
+								<a href="https://github.com/Sylvia-HY/Online-Exam-System.git">
+									<button type="button" class="btn">查看</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 联系 -->
+			<div class="contact">
+				<div class="blog-heading">
+					<!-- 标题 -->
+					<h3 class="title">我的<span>博客</span></h3>
+					<!-- 文本 -->
+					<p class="text">开发路上的点点滴滴</p>
+				</div>
+				<!-- 表单 -->
+				<div class="contact-content">
+					<form action="" method="post">
+						<input type="text" class="content-name" placeholder="你的名字...">
+						<input type="email" class="content-email" placeholder="你的邮箱..."/>
+						<textarea rows="6" cols="" class="txra" placeholder="你的信息..."></textarea>
+						<input type="submit" value="提交信息" class="subbtn"/>
+					</form>
+				</div>
+			</div>
+			<!-- footer -->
+			<footer class="footer">
+				<p>Copyright @ 2020-2024 为你筑梦</p>
+			</footer>
+		</div>
+	</body>
 </html>
